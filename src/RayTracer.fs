@@ -79,11 +79,13 @@ module RayTracer =
         abstract Intersect: Ray -> float
         abstract Normal: Vector -> Vector
 
+    [<Struct>]
     type Light = {
         Pos: Vector
         Color: Color
     }
 
+    [<Struct>]
     type Scene = {
         Things: SceneObject[]
         Lights: Light[]
