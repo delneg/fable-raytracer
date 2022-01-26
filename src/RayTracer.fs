@@ -83,6 +83,7 @@ module RayTracer =
         Color: Color
     }
 
+    [<Struct>]
     type Scene = {
         Things: SceneObject[]
         Lights: Light[]

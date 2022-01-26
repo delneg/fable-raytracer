@@ -13,6 +13,10 @@
     </RestoreAdditionalProjectSources>
     <IlcDisableReflection>true</IlcDisableReflection>
     <IlcOptimizationPreference>Speed</IlcOptimizationPreference>
+<!--     <InvariantGlobalization>true</InvariantGlobalization> -->
+<!--     <IlcFoldIdenticalMethodBodies>true</IlcFoldIdenticalMethodBodies> -->
+<!--     <RootAllApplicationAssemblies>false</RootAllApplicationAssemblies> -->
+<!--     <IlcGenerateStackTraceData>false</IlcGenerateStackTraceData> -->
   </PropertyGroup>
 
   <ItemGroup>
