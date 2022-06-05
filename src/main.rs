@@ -7,11 +7,8 @@
 #![allow(unused_variables)]
 #![allow(unused_attributes)]
 #[path = "./RayTracer.rs"]
-pub(crate) mod import_feb400d7;
-pub use import_feb400d7::*;
-#[path = "./Platform.rs"]
-pub(crate) mod import_163eefb1;
-pub use import_163eefb1::*;
+pub(crate) mod import_ec9511b6;
+pub use import_ec9511b6::*;
 use fable_library_rust::*;
 pub mod TestApp {
     use super::*;
@@ -22,29 +19,16 @@ pub mod TestApp {
         let h: i32 = patternInput.3.clone();
         let data: Rc<MutCell<Vec<u8>>> =
             Native::arrayCreate(&(w * h * 4i32), &0u8);
-        println!("{0}", &Native::string(&"Raytracer running..."));
-        {
-            let patternInput_1: ((), f64) =
-                Platform::measureTime(&Rc::from({
-                                                    let data = data.clone();
-                                                    move ||
-                                                        RayTracerDemo::renderScene(&data,
-                                                                                   &patternInput.0.clone(),
-                                                                                   &patternInput.1.clone(),
-                                                                                   &w,
-                                                                                   &h,
-                                                                                   &0.0f64)
-                                                }));
-            println!("Ray tracing done:
- - rendered image size: ({0}x{1})
- - elapsed: {2} ms",
-                     &w, &h, &patternInput_1.1.clone());
-            0i32
-        }
+        println!("{0}", &String_::string(&"Raytracer running..."));
+        RayTracerDemo::renderScene(&data, &patternInput.0.clone(),
+                                   &patternInput.1.clone(), &w, &h, &0.0f64);
+        println!("Ray tracing done:\n - rendered image size: ({0}x{1})\n", &w,
+                 &h);
+        0i32
     }
 }
 pub fn main() {
     let args: Vec<String> = std::env::args().collect();
-    let args: Vec<Rc<str>> = args[1..].iter().map(|s| Native::string(s)).collect();
+    let args: Vec<Rc<str>> = args[1..].iter().map(|s| String_::string(s)).collect();
     TestApp::main(&Native::arrayFrom(&args));
 }
