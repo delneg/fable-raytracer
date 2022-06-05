@@ -14,7 +14,7 @@
     "build-wasm-node": "wasm-pack build --target nodejs",
 
     "test-js": "npm run build-js && node out/src/main.js",
-    "test-web": "npm run build-wasm-web && npx http-server",
+    "test-web": "npm run build-wasm-web && serve",
     "test-wasm": "npm run build-wasm-node && node src/test_wasm.js",
     "test-rust": "cargo run --release",
     "test-dotnet": "dotnet run -c Release",
